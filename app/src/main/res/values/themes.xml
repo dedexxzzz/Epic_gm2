@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EpicGmes" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="SearchViewCustomColor" parent="Theme.AppCompat.Light">
+        <!-- Cor do texto de dica "Pesquisar Jogos" (Branco) -->
+        <item name="android:textColorHint">#FFFFFF</item>
+
+        <!-- Cor do texto que o usuário digita (Branco) -->
+        <item name="android:editTextColor">#FFFFFF</item>
+
+        <!-- Cor do ícone da lupa e do botão de fechar (Branco) -->
+        <item name="android:tint">#FFFFFF</item>
+    </style>
+
+    <style name="Theme.EpicGmes" parent="Base.Theme.EpicGmes" />
+</resources>
