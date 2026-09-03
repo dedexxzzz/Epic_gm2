@@ -1,6 +1,9 @@
 package com.example.epicgmes;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,9 +22,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Primeiro coloca a tela na tela
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        // Encontra o botão
+        Button proxima = findViewById(R.id.proximo);
+
+        // Quando clicar no botão, abre a MainActivity2
+        proxima.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+
+            }
+        });
+
+        // ViewPager dos jogos
         ViewPager2 viewPager = findViewById(R.id.viewPagerJogos);
 
         int[] imagens = {
@@ -53,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager.setAdapter(adapter);
 
+        // Ajuste das margens da tela
         ViewCompat.setOnApplyWindowInsetsListener(
                 findViewById(R.id.main),
                 (v, insets) -> {
